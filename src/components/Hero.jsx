@@ -14,29 +14,30 @@ function Hero() {
 
  
 
-    const getGamesPC = async() => {
-        try {
-            let response = await axios({
-                method: 'GET',
-                url: 'https://free-to-play-games-database.p.rapidapi.com/api/games',
-                params: {platform: platform},
-                headers: {
-                  'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com',
-                  'x-rapidapi-key': 'e5fd97d755mshaa17a0004200f94p185f48jsn6507cbe9cf94'
-                }
-            })   
-            setGamesPC(response.data)      
-            setIsLoading(false)   
-        } catch (error) {
-            console.log(error.message)
-        }
-    }
+    
     const handlePlatform = (event) => {
         setPlatform(event.target.value)
        
     }
 
     useEffect(() => {
+        const getGamesPC = async() => {
+            try {
+                let response = await axios({
+                    method: 'GET',
+                    url: 'https://free-to-play-games-database.p.rapidapi.com/api/games',
+                    params: {platform: platform},
+                    headers: {
+                      'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com',
+                      'x-rapidapi-key': 'e5fd97d755mshaa17a0004200f94p185f48jsn6507cbe9cf94'
+                    }
+                })   
+                setGamesPC(response.data)      
+                setIsLoading(false)   
+            } catch (error) {
+                console.log(error.message)
+            }
+        }
         getGamesPC()
         setIsLoading(true)
     },[platform])
