@@ -47,7 +47,7 @@ function Hero() {
           <div className='basis-auto   '>
               <Sidebar />
           </div>
-          <div className='basis-5/6 bg-gray-700 min-h-screen font-display w-screen'>
+          <div className='basis-5/6 bg-gray-700 min-h-screen font-display w-screen '>
                 <div className='text-white px-10 py-10'>
                     <div className="flex lg:flex-row flex-col lg:justify-around items-center">
                         <div className='basis-9/12'>
@@ -70,6 +70,7 @@ function Hero() {
                         return <CardsListItem pc={pc} key={index}/>
                     })}
                 </div>
+                
                 
             </div>
           </div>
